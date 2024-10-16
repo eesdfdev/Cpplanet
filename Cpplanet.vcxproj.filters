@@ -56,13 +56,16 @@
     <ClInclude Include="SmartOutStream.h">
       <Filter>헤더 파일\Stream</Filter>
     </ClInclude>
-    <ClInclude Include="Packet.h">
-      <Filter>헤더 파일\Packets</Filter>
-    </ClInclude>
     <ClInclude Include="PrSyncTick.h">
       <Filter>헤더 파일\Packets</Filter>
     </ClInclude>
     <ClInclude Include="PrSyncDate.h">
+      <Filter>헤더 파일\Packets</Filter>
+    </ClInclude>
+    <ClInclude Include="PacketFactory.h">
+      <Filter>헤더 파일\Packets</Filter>
+    </ClInclude>
+    <ClInclude Include="Packets\Packet.h">
       <Filter>헤더 파일\Packets</Filter>
     </ClInclude>
   </ItemGroup>

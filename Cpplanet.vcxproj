@@ -140,7 +140,8 @@
   <ItemGroup>
     <ClInclude Include="ClientSession.h" />
     <ClInclude Include="Config.h" />
-    <ClInclude Include="Packet.h" />
+    <ClInclude Include="PacketFactory.h" />
+    <ClInclude Include="Packets\Packet.h" />
     <ClInclude Include="PrSyncDate.h" />
     <ClInclude Include="PrSyncTick.h" />
     <ClInclude Include="ServerSock.h" />

@@ -3,9 +3,7 @@
 #include <thread>
 #include <iostream>
 
-#include "Packet.h"
-#include "PrSyncTick.h"
-#include "PrSyncDate.h"
+#include "PacketFactory.h"
 
 #include <sstream>
 #include <iomanip>
@@ -76,16 +74,9 @@ void ClientSession::OnRawPacket(BYTES buffer, int length) {
 	int rttiValue = *(int*)buffer;
 	std::cout << " 패킷 " << std::hex << rttiValue << "을 받았습니다." << std::endl;
 	std::cout << " 패킷 Payload : " << hexStr(buffer, length) << std::endl;
-	//따로 패킷을 Return해주는 function 제작 필요
+
 	Packet* packet = nullptr;
-	switch (rttiValue) {
-	case 0x764F67D9: //PqSyncTick
-		packet = new PrSyncTick();
-		break;
-	case 0x6C388FD7:
-		packet = new PrSyncDate();
-		break;
-	}
+	packet = PacketFactory::GetServerPacket(rttiValue);
 	if (packet != nullptr) {
 		packet->encode();
 		Send(packet->stream->buffer, packet->stream->offset);
