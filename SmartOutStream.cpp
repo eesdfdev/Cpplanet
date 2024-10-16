@@ -46,7 +46,6 @@ void SmartOutStream::WriteBytes(BYTES value, int length) {
 void SmartOutStream::WriteString(const wchar_t* str) {
 	int stringLength = wcslen(str);
 	WriteInt(stringLength);
-	AllocMemory(stringLength);
+	stringLength *= 2;
 	WriteBytes((BYTES)str, stringLength);
-	offset += stringLength;
 }
