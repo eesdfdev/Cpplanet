@@ -33,10 +33,10 @@
     <ClCompile Include="ClientSession.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="SmartOutStream.cpp">
+    <ClCompile Include="Stream\SmartInStream.cpp">
       <Filter>소스 파일\Stream</Filter>
     </ClCompile>
-    <ClCompile Include="SmartInStream.cpp">
+    <ClCompile Include="Stream\SmartOutStream.cpp">
       <Filter>소스 파일\Stream</Filter>
     </ClCompile>
   </ItemGroup>
@@ -50,18 +50,6 @@
     <ClInclude Include="ClientSession.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="SmartInStream.h">
-      <Filter>헤더 파일\Stream</Filter>
-    </ClInclude>
-    <ClInclude Include="SmartOutStream.h">
-      <Filter>헤더 파일\Stream</Filter>
-    </ClInclude>
-    <ClInclude Include="PrSyncTick.h">
-      <Filter>헤더 파일\Packets</Filter>
-    </ClInclude>
-    <ClInclude Include="PrSyncDate.h">
-      <Filter>헤더 파일\Packets</Filter>
-    </ClInclude>
     <ClInclude Include="Packets\Packet.h">
       <Filter>헤더 파일\Packets</Filter>
     </ClInclude>
@@ -73,6 +61,18 @@
     </ClInclude>
     <ClInclude Include="Packets\PrLogin.h">
       <Filter>헤더 파일\Packets</Filter>
+    </ClInclude>
+    <ClInclude Include="Packets\PrSyncDate.h">
+      <Filter>헤더 파일\Packets</Filter>
+    </ClInclude>
+    <ClInclude Include="Packets\PrSyncTick.h">
+      <Filter>헤더 파일\Packets</Filter>
+    </ClInclude>
+    <ClInclude Include="Stream\SmartInStream.h">
+      <Filter>헤더 파일\Stream</Filter>
+    </ClInclude>
+    <ClInclude Include="Stream\SmartOutStream.h">
+      <Filter>헤더 파일\Stream</Filter>
     </ClInclude>
     <ClInclude Include="Packets\PrWorldList.h">
       <Filter>헤더 파일\Packets</Filter>

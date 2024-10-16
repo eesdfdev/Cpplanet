@@ -134,8 +134,8 @@
     <ClCompile Include="ClientSession.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="ServerSock.cpp" />
-    <ClCompile Include="SmartInStream.cpp" />
-    <ClCompile Include="SmartOutStream.cpp" />
+    <ClCompile Include="Stream\SmartInStream.cpp" />
+    <ClCompile Include="Stream\SmartOutStream.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ClientSession.h" />
@@ -144,12 +144,12 @@
     <ClInclude Include="Packets\Packet.h" />
     <ClInclude Include="Packets\PcFirstMessage.h" />
     <ClInclude Include="Packets\PrLogin.h" />
+    <ClInclude Include="Packets\PrSyncDate.h" />
+    <ClInclude Include="Packets\PrSyncTick.h" />
     <ClInclude Include="Packets\PrWorldList.h" />
-    <ClInclude Include="PrSyncDate.h" />
-    <ClInclude Include="PrSyncTick.h" />
     <ClInclude Include="ServerSock.h" />
-    <ClInclude Include="SmartInStream.h" />
-    <ClInclude Include="SmartOutStream.h" />
+    <ClInclude Include="Stream\SmartInStream.h" />
+    <ClInclude Include="Stream\SmartOutStream.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

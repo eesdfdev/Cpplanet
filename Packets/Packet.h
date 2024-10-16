@@ -1,5 +1,5 @@
 #pragma once
-#include "SmartOutStream.h"
+#include "Stream/SmartOutStream.h"
 class Packet
 {
 public:
