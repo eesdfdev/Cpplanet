@@ -71,5 +71,8 @@
     <ClInclude Include="Packets\PcFirstMessage.h">
       <Filter>헤더 파일\Packets</Filter>
     </ClInclude>
+    <ClInclude Include="Packets\PrLogin.h">
+      <Filter>헤더 파일\Packets</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -2,6 +2,7 @@
 #include "Packets/Packet.h"
 #include "Packets/PrSyncTick.h"
 #include "Packets/PrSyncDate.h"
+#include "Packets/PrLogin.h"
 class PacketFactory {
 public:
 	static Packet* GetServerPacket(unsigned int rttiValue) {
@@ -12,6 +13,9 @@ public:
 			break;
 		case 0x6C388FD7:
 			packet = new PrSyncDate();
+			break;
+		case 0x40C38368:
+			packet = new PrLogin();
 			break;
 		}
 		return packet;

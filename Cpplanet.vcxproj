@@ -143,6 +143,7 @@
     <ClInclude Include="PacketFactory.h" />
     <ClInclude Include="Packets\Packet.h" />
     <ClInclude Include="Packets\PcFirstMessage.h" />
+    <ClInclude Include="Packets\PrLogin.h" />
     <ClInclude Include="PrSyncDate.h" />
     <ClInclude Include="PrSyncTick.h" />
     <ClInclude Include="ServerSock.h" />
