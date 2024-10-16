@@ -1,5 +1,5 @@
 # Cpplanet
- The fisrt Open Source c++ EverPlanet Emulator.
+ The first Open Source c++ EverPlanet Emulator.
 ## Implemented Features
   - Login
   - World List
