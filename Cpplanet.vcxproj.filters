@@ -19,6 +19,9 @@
     <Filter Include="헤더 파일\Stream">
       <UniqueIdentifier>{cf2da32d-3452-4198-8cef-8a39f3b3db1c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\Packets">
+      <UniqueIdentifier>{7a2b96e0-eed7-4666-ace7-caf723befa1f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -52,6 +55,15 @@
     </ClInclude>
     <ClInclude Include="SmartOutStream.h">
       <Filter>헤더 파일\Stream</Filter>
+    </ClInclude>
+    <ClInclude Include="Packet.h">
+      <Filter>헤더 파일\Packets</Filter>
+    </ClInclude>
+    <ClInclude Include="PrSyncTick.h">
+      <Filter>헤더 파일\Packets</Filter>
+    </ClInclude>
+    <ClInclude Include="PrSyncDate.h">
+      <Filter>헤더 파일\Packets</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

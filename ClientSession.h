@@ -9,6 +9,6 @@ public:
 private:
 	void SendPatchData();
 	void ReceivingThread();
-	void OnRawPacket(BYTES buffer);
+	void OnRawPacket(BYTES buffer, int length);
 	void Disconnect();
 };

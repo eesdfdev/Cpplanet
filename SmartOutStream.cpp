@@ -33,6 +33,11 @@ void SmartOutStream::WriteInt(int value) {
 	*(int*)(buffer + offset) = value;
 	offset += 4;
 }
+void SmartOutStream::WriteUInt(unsigned int value) {
+	AllocMemory(4);
+	*(unsigned int*)(buffer + offset) = value;
+	offset += 4;
+}
 void SmartOutStream::WriteBytes(BYTES value, int length) {
 	AllocMemory(length);
 	memcpy((buffer + offset), value, length);

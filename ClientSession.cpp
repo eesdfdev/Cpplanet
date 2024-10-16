@@ -3,6 +3,10 @@
 #include <thread>
 #include <iostream>
 
+#include "Packet.h"
+#include "PrSyncTick.h"
+#include "PrSyncDate.h"
+
 #include <sstream>
 #include <iomanip>
 std::string hexStr(const uint8_t* data, int len)
@@ -51,7 +55,7 @@ void ClientSession::ReceivingThread() {
 			if (length > 0 && length < 0xFFFF) {
 				received = recv(sock, (char*)buffer, length, 0);
 				if (received != 0) {
-					OnRawPacket(buffer);
+					OnRawPacket(buffer, length);
 				}
 				else {
 					std::cout << " 올바른 패킷을 받지 못했습니다." << std::endl;
@@ -68,13 +72,28 @@ void ClientSession::ReceivingThread() {
 		}
 	}
 }
-void ClientSession::OnRawPacket(BYTES buffer) {
+void ClientSession::OnRawPacket(BYTES buffer, int length) {
 	int rttiValue = *(int*)buffer;
 	std::cout << " 패킷 " << std::hex << rttiValue << "을 받았습니다." << std::endl;
-	std::cout << " 패킷 Payload : " << hexStr(buffer, sizeof(buffer) * 2) << std::endl;
-	//TODO : 패킷처리
+	std::cout << " 패킷 Payload : " << hexStr(buffer, length) << std::endl;
+	//따로 패킷을 Return해주는 function 제작 필요
+	Packet* packet = nullptr;
+	switch (rttiValue) {
+	case 0x764F67D9: //PqSyncTick
+		packet = new PrSyncTick();
+		break;
+	case 0x6C388FD7:
+		packet = new PrSyncDate();
+		break;
+	}
+	if (packet != nullptr) {
+		packet->encode();
+		Send(packet->stream->buffer, packet->stream->offset);
+	}
 }
 void ClientSession::Send(BYTES buffer, int len) {
+	std::cout << "New Packet" << std::endl;
+	std::cout << " 패킷 " << std::hex << *(int*)buffer << "을 보냈습니다." << std::endl;
 	SmartOutStream* outStream = new SmartOutStream();
 	outStream->WriteInt(len);
 	outStream->WriteBytes(buffer, len);
