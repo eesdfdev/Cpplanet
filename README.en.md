@@ -4,10 +4,13 @@
   - Login
   - World List
 ## How to Use
-  - Get KR EP Client, Create Profile/kr/test.xml, Put args when execute the client.
-  - `GameClient.exe -profile:test -loginserveraddr:127.0.0.1:3431`
-  - test.xml can be like below
-  - `<profile></profile>`
+  - Download Cpplanet.exe from the Release tab.
+  - Get EverPlanet Korean client.
+  - After creating a Profile folder in the client folder, create a kr folder inside and put a test.xml file.
+  - test.xml should be
+  `<profile></profile>`
+  - Create a client shortcut and put -profile:test -loginserveraddr:127.0.0.1:3431 in the target column of the shortcut
+  - Run Server & Run Client with Shortcut
 ## Contract
   - github issues, Discord eesdf
 ## TODO
