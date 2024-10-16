@@ -1,6 +1,6 @@
 #pragma once
 #define byte unsigned char
-#define BYTES unsigned char*
+#define BYTES byte*
 class SmartOutStream
 {
 public:

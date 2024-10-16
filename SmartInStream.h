@@ -1,5 +1,6 @@
 #pragma once
-#define BYTES unsigned char*
+#define BYTE unsigned char
+#define BYTES BYTE*
 class SmartInStream
 {
 public:

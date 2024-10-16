@@ -1,6 +1,7 @@
 #pragma once
 #include <winsock.h>
-#define BYTES unsigned char*
+#define BYTE unsigned char
+#define BYTES BYTE*
 class ClientSession {
 public:
 	ClientSession(SOCKET socket);

@@ -1,8 +1,7 @@
 #pragma once
 #include "Packet.h"
 #include <iostream>
-#define BYTE unsigned char
-#define BYTES BYTE*
+
 class PcFirstMessage : public Packet {
 public:
 	PcFirstMessage() : Packet(0x7191CA) {};
