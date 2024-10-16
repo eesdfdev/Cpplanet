@@ -37,9 +37,9 @@ void ClientSession::ReceivingThread() {
 	while (1) {
 		int length = 0;
 		int received = recv(sock, (char*)&length, 4, 0);
-		if (received == 4) { //¾ÏÈ£È­ Ã³¸® ÇØÁà¾ß ÇÏ´Âµ¥ ¾ÏÈ£È­ ºñÈ°¼ºÈ­µÇ¼­ ÇÊ¿ä ¾øÀ½.
+		if (received == 4) { //ì•”í˜¸í™” ì²˜ë¦¬ í•´ì¤˜ì•¼ í•˜ëŠ”ë° ì•”í˜¸í™” ë¹„í™œì„±í™”ë˜ì„œ í•„ìš” ì—†ìŒ.
 			std::cout << "New Packet" << std::endl;
-			std::cout << " ÆĞÅ¶ ±æÀÌ : " << length << std::endl;
+			std::cout << " íŒ¨í‚· ê¸¸ì´ : " << length << std::endl;
 			BYTES buffer = (BYTES)malloc(length);
 			if (length > 0 && length < 0xFFFF) {
 				received = recv(sock, (char*)buffer, length, 0);
@@ -47,15 +47,15 @@ void ClientSession::ReceivingThread() {
 					OnRawPacket(buffer, length);
 				}
 				else {
-					std::cout << " ¿Ã¹Ù¸¥ ÆĞÅ¶À» ¹ŞÁö ¸øÇß½À´Ï´Ù." << std::endl;
+					std::cout << " ì˜¬ë°”ë¥¸ íŒ¨í‚·ì„ ë°›ì§€ ëª»í–ˆìŠµë‹ˆë‹¤." << std::endl;
 				}
 			}
 			else {
-				std::cout << " ÆĞÅ¶ ±æÀÌ°¡ " << length << "ÀÌ¿´½À´Ï´Ù." << std::endl; //Àß¸øµÈ ÆĞÅ¶À» receiveÇßÀ» °¡´É¼ºÀÌ ³ôÀ½.
+				std::cout << " íŒ¨í‚· ê¸¸ì´ê°€ " << length << "ì´ì˜€ìŠµë‹ˆë‹¤." << std::endl; //ì˜ëª»ëœ íŒ¨í‚·ì„ receiveí–ˆì„ ê°€ëŠ¥ì„±ì´ ë†’ìŒ.
 			}
 		}
 		else {
-			std::cout << " ¿¬°áÀÌ Á¾·áµÇ¾ú½À´Ï´Ù." << std::endl;
+			std::cout << " ì—°ê²°ì´ ì¢…ë£Œë˜ì—ˆìŠµë‹ˆë‹¤." << std::endl;
 			Disconnect();
 			return;
 		}
@@ -63,8 +63,8 @@ void ClientSession::ReceivingThread() {
 }
 void ClientSession::OnRawPacket(BYTES buffer, int length) {
 	int rttiValue = *(int*)buffer;
-	std::cout << " ÆĞÅ¶ " << std::hex << rttiValue << "À» ¹Ş¾Ò½À´Ï´Ù." << std::endl;
-	std::cout << " ÆĞÅ¶ Payload : " << hexStr(buffer, length) << std::endl;
+	std::cout << " íŒ¨í‚· " << std::hex << rttiValue << "ì„ ë°›ì•˜ìŠµë‹ˆë‹¤." << std::endl;
+	std::cout << " íŒ¨í‚· Payload : " << hexStr(buffer, length) << std::endl;
 
 	Packet* packet = nullptr;
 	packet = PacketFactory::GetServerPacket(rttiValue);
@@ -75,11 +75,11 @@ void ClientSession::OnRawPacket(BYTES buffer, int length) {
 }
 void ClientSession::Send(BYTES buffer, int len) {
 	std::cout << "New Packet" << std::endl;
-	std::cout << " ÆĞÅ¶ " << std::hex << *(int*)buffer << "À» º¸³Â½À´Ï´Ù." << std::endl;
+	std::cout << " íŒ¨í‚· " << std::hex << *(int*)buffer << "ì„ ë³´ëƒˆìŠµë‹ˆë‹¤." << std::endl;
 	SmartOutStream* outStream = new SmartOutStream();
 	outStream->WriteInt(len);
 	outStream->WriteBytes(buffer, len);
 	if (send(sock, (char*)outStream->buffer, outStream->offset, 0) == -1) {
-		std::cout << "ClientSession::Send ¿¡·¯ ÄÚµå : " << WSAGetLastError() << std::endl;
+		std::cout << "ClientSession::Send ì—ëŸ¬ ì½”ë“œ : " << WSAGetLastError() << std::endl;
 	}
 }

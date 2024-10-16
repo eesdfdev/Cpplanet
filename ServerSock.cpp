@@ -17,12 +17,12 @@ ServerSock::ServerSock() {
 }
 void ServerSock::Run() {
 	if (SOCKET_ERROR == bind(sock, (SOCKADDR*)&sockaddr, sizeof(sockaddr))) {
-		std::wcout << "¼ÒÄÏ ¹ÙÀÎµù ½ÇÆÐ" << std::endl;
+		std::wcout << "ì†Œì¼“ ë°”ì¸ë”© ì‹¤íŒ¨" << std::endl;
 		closesocket(sock);
 		WSACleanup();
 		return;
 	}
-	std::wcout << "¼­¹ö ¼ÒÄÏÀÌ ¹ÙÀÎµù µÆ½À´Ï´Ù.\n Æ÷Æ® : " << (u_short)Config::BindingPort << std::endl;
+	std::wcout << "ì„œë²„ ì†Œì¼“ì´ ë°”ì¸ë”© ëìŠµë‹ˆë‹¤.\n í¬íŠ¸ : " << (u_short)Config::BindingPort << std::endl;
 	listen(sock, SOMAXCONN);
 	while (1) {
 		sockaddr_in ClientAddress;
@@ -30,7 +30,7 @@ void ServerSock::Run() {
 		SOCKET client = accept(sock, (SOCKADDR*)&ClientAddress, &len);
 		wchar_t ClientIP[16];
 		RtlIpv4AddressToStringW((in_addr*) & ClientAddress.sin_addr.S_un.S_addr, ClientIP);
-		std::wcout << "»õ·Î¿î ¿äÃ»\n Å¬¶óÀÌ¾ðÆ® IP : " << ClientIP << " Port : " << ClientAddress.sin_port << std::endl;
+		std::wcout << "ìƒˆë¡œìš´ ìš”ì²­\n í´ë¼ì´ì–¸íŠ¸ IP : " << ClientIP << " Port : " << ClientAddress.sin_port << std::endl;
 
 		ClientSession* clientSession = new ClientSession(client);
 	}

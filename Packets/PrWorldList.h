@@ -7,7 +7,7 @@ public:
 		stream->WriteInt(1);
 		for (int i = 0; i < 1; i++) {
 			stream->WriteShort(0);
-			stream->WriteString(L"[Cpplanet]ÀÌ½ÃÇÁ");
+			stream->WriteString(L"[Cpplanet]ì´ì‹œí”„");
 			stream->WriteShort(0);
 			stream->WriteByte(0);
 			stream->WriteByte(0);
