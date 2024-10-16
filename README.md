@@ -8,4 +8,4 @@
   - `GameClient.exe -profile:test -loginserveraddr:127.0.0.1:3431`
   - test.xml내의 내용은 상관 없습니다. 
 ## 질문
-  - github issues 또는 디스코드 eesdf또는 [디시인사이드 시프 갤러리](https://gall.dcinside.com/mgallery/board/lists?id=eesdf) 연락 주시면 됩니다.
+  - github issues, 디스코드 eesdf, [디시인사이드 시프 갤러리](https://gall.dcinside.com/mgallery/board/lists?id=eesdf)로 연락 주시면 됩니다.
