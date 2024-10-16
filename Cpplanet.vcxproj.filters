@@ -62,10 +62,13 @@
     <ClInclude Include="PrSyncDate.h">
       <Filter>헤더 파일\Packets</Filter>
     </ClInclude>
-    <ClInclude Include="PacketFactory.h">
+    <ClInclude Include="Packets\Packet.h">
       <Filter>헤더 파일\Packets</Filter>
     </ClInclude>
-    <ClInclude Include="Packets\Packet.h">
+    <ClInclude Include="PacketFactory.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Packets\PcFirstMessage.h">
       <Filter>헤더 파일\Packets</Filter>
     </ClInclude>
   </ItemGroup>

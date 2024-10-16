@@ -3,6 +3,7 @@
 #include <thread>
 #include <iostream>
 
+#include "Packets/PcFirstMessage.h"
 #include "PacketFactory.h"
 
 #include <sstream>
@@ -28,19 +29,9 @@ void ClientSession::Disconnect() {
 	closesocket(sock);
 }
 void ClientSession::SendPatchData() {
-	SmartOutStream* stream = new SmartOutStream();
-	stream->WriteInt(0x7191CA); //PcFirstMessage rttiValue
-
-	//I know Hard-Coded consts are bad
-	stream->WriteInt(1);
-	stream->WriteShort(1003);
-	stream->WriteByte(118);
-	stream->WriteShort(680);
-	stream->WriteString(L"TestURL");
-	stream->WriteInt(0); //server key
-	stream->WriteInt(0); //server key
-	stream->WriteBytes((BYTES)calloc(32, sizeof(BYTE)), 32);
-	Send(stream->buffer, stream->offset);
+	Packet* packet = new PcFirstMessage();
+	packet->encode();
+	Send(packet->stream->buffer, packet->stream->offset);
 }
 void ClientSession::ReceivingThread() {
 	while (1) {
