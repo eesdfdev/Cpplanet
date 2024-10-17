@@ -14,4 +14,4 @@
 ## Contract
   - github issues, Discord eesdf
 ## TODO
-  - SmartInStream impl, Get into ingame
+  - Get into ingame
