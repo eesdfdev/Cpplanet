@@ -77,5 +77,8 @@
     <ClInclude Include="Packets\PrWorldList.h">
       <Filter>헤더 파일\Packets</Filter>
     </ClInclude>
+    <ClInclude Include="Logger.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

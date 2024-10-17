@@ -140,6 +140,7 @@
   <ItemGroup>
     <ClInclude Include="ClientSession.h" />
     <ClInclude Include="Config.h" />
+    <ClInclude Include="Logger.h" />
     <ClInclude Include="PacketFactory.h" />
     <ClInclude Include="Packets\Packet.h" />
     <ClInclude Include="Packets\PcFirstMessage.h" />
