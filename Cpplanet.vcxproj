@@ -144,10 +144,12 @@
     <ClInclude Include="PacketFactory.h" />
     <ClInclude Include="Packets\Packet.h" />
     <ClInclude Include="Packets\PcFirstMessage.h" />
+    <ClInclude Include="Packets\PrAuthLogin.h" />
     <ClInclude Include="Packets\PrLogin.h" />
     <ClInclude Include="Packets\PrSyncDate.h" />
     <ClInclude Include="Packets\PrSyncTick.h" />
     <ClInclude Include="Packets\PrWorldList.h" />
+    <ClInclude Include="Packets\PrWorldSelect.h" />
     <ClInclude Include="ServerSock.h" />
     <ClInclude Include="Stream\SmartInStream.h" />
     <ClInclude Include="Stream\SmartOutStream.h" />
