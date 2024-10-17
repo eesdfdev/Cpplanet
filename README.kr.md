@@ -15,5 +15,3 @@
   - github issues, 디스코드 eesdf, [디시인사이드 시프 갤러리](https://gall.dcinside.com/mgallery/board/lists?id=eesdf)로 연락 주시면 됩니다.
 ## TODO
   - SmartInStream 구현, 인게임 진입
-## 자율 후원
-  - [투네이션](https://toon.at/donate/eesdfdev) 감사합니다.
