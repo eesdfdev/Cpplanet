@@ -3,6 +3,7 @@
 ## Implemented Features
   - Login
   - World List
+  - Character Selection Stage
 ## How to Use
   - Download Cpplanet.exe from the Release tab.
   - Get EverPlanet Korean client.
