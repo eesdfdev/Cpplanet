@@ -86,5 +86,11 @@
     <ClInclude Include="Packets\PrAuthLogin.h">
       <Filter>헤더 파일\Packets</Filter>
     </ClInclude>
+    <ClInclude Include="Packets\PrChaList.h">
+      <Filter>헤더 파일\Packets</Filter>
+    </ClInclude>
+    <ClInclude Include="Packets\PrUserPin2Check.h">
+      <Filter>헤더 파일\Packets</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
