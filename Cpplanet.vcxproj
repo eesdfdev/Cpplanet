@@ -153,6 +153,7 @@
     <ClInclude Include="Packets\Packet.h" />
     <ClInclude Include="Packets\PcFirstMessage.h" />
     <ClInclude Include="Packets\PrAuthLogin.h" />
+    <ClInclude Include="Packets\PrChaCreate.h" />
     <ClInclude Include="Packets\PrChaList.h" />
     <ClInclude Include="Packets\PrLogin.h" />
     <ClInclude Include="Packets\PrSyncDate.h" />
